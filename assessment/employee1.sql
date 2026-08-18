@@ -7,6 +7,7 @@ CREATE TABLE emplo_details(
     phone_no VARCHAR(20) NOT NULL,
     department VARCHAR(20) NOT NULL,
     salary FLOAT NOT NULL
+    
 );
 /* 2026-08-16 20:00:15 [5 ms] */ 
 SELECT * FROM emplo_details LIMIT 100;
@@ -44,6 +45,19 @@ SELECT * FROM emplo_details WHERE salary>=40000 and salary<=50000 LIMIT 100;
 SELECT * FROM emplo_details WHERE department='information technology' OR department='research and development' LIMIT 100;
 /* 2026-08-16 20:29:59 [3 ms] */ 
 SELECT* FROM emplo_details WHERE gender NOT IN('male');
+CREATE TABLE employee_details (
+    detail_id INT PRIMARY KEY NOT NULL,
+    employee_id INT NOT NULL,
+    address VARCHAR(100),
+    email VARCHAR(100),
+    FOREIGN KEY (employee_id) REFERENCES emplo_details(employee_id)
+);
+INSERT INTO employee_details
+(detail_id, employee_id, address, email)
+VALUES
+(1, 1, 'Mysore', 'rahul@gmail.com'),
+(2, 2, 'Bangalore', 'priya@gmail.com'),
+(3, 3, 'Mangalore', 'arjun@gmail.com');
 /* 2026-08-17 21:29:56 [33 ms] */ 
 -- Active: 1786077469429@@127.0.0.1@5432@employee;
 /* 2026-08-17 21:29:56 [33 ms] */ 
