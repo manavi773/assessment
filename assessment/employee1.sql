@@ -44,7 +44,7 @@ SELECT * FROM emplo_details WHERE salary>=40000 and salary<=50000 LIMIT 100;
 /* 2026-08-16 20:27:56 [3 ms] */ 
 SELECT * FROM emplo_details WHERE department='information technology' OR department='research and development' LIMIT 100;
 /* 2026-08-16 20:29:59 [3 ms] */ 
-SELECT* FROM emplo_details WHERE gender NOT IN('male');
+SELECT* FROM emplo_details WHERE NOT gender='male';
 CREATE TABLE employee_details (
     detail_id INT PRIMARY KEY NOT NULL,
     employee_id INT NOT NULL,
