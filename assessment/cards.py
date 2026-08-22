@@ -59,7 +59,15 @@ def cards_game():
                 winners[winner]=1
             k+=1
             a-=1
-        print("The winner is: player", max(winners, key=winners.get))
+        all_winner=[]
+        maxi=max(winners.values())
+        for key,values in winners.items():
+            if values==maxi:
+                all_winner.append(key)
+        if (len(all_winner)==1):
+            print("The winner is: player", max(winners, key=winners.get))
+        else:
+            print("players who won are:",all_winner)
     except Exception as e:
         print(e)
 cards_game()
